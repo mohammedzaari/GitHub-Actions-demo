@@ -1,0 +1,8 @@
+#STS 
+.metadata/
+.settings/
+
+# demo
+target/
+.classpath
+
