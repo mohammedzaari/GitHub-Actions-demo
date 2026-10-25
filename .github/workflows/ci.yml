@@ -2,7 +2,6 @@ name: CI
 
 on:
   push:
-    branches: [main]
   pull_request:
 
 jobs:
@@ -18,6 +17,8 @@ jobs:
           distribution: temurin
           java-version: 17
           cache: maven
+          cache-dependency-path: p01-automation-tests/pom.xml
 
       - name: Lancer les tests
-        run: ./mvnw -B verify
+        working-directory: p01-automation-tests
+        run: bash ./mvnw -B verify
